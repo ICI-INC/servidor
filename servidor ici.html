@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conectando ao Servidor...</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0f172a;
+            color: #e2e8f0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .loader {
+            width: 60px;
+            height: 60px;
+            border: 6px solid #334155;
+            border-top: 6px solid #3b82f6;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .texto-loading {
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .subtexto {
+            font-size: 14px;
+            color: #94a3b8;
+        }
+
+        .barra-progresso {
+            width: 200px;
+            height: 4px;
+            background: #334155;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .progresso {
+            width: 0%;
+            height: 100%;
+            background: #3b82f6;
+            animation: carregar 5s linear forwards;
+        }
+
+        @keyframes carregar {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader"></div>
+    <div class="texto-loading">Conectando ao servidor</div>
+    <div class="subtexto">Aguarde, estamos preparando tudo pra você...</div>
+    <div class="barra-progresso">
+        <div class="progresso"></div>
+    </div>
+
+    <script>
+        // Troque a URL abaixo pela página que você quer abrir
+        const proximaPagina = "https://lights-images-genealogy-bye.trycloudflare.com/ici/index.php";
+        
+        // Espera 5 segundos e redireciona
+        setTimeout(() => {
+            window.location.href = proximaPagina;
+        }, 5000);
+    </script>
+</body>
+</html>
